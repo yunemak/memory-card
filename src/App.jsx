@@ -67,18 +67,19 @@ function App() {
 
 	return (
 		<div className="app">
-			<div>
+			<header>
 				<h1>Rick and Morty Memory Game</h1>
-				<p>
-					Get points by clicking on an image that you did not click
-					before! Up to 12 points.
-				</p>
-				<p>
+				<p className="scores">
 					Score: {score}
 					<br />
 					Best Score: {bestScore}
 				</p>
-			</div>
+				<p>
+					Get points by clicking on an image that you did not click
+					before! Up to 12 points.
+				</p>
+				<div></div>
+			</header>
 			<div className="card-container">
 				{characters.map((char) => (
 					<Card

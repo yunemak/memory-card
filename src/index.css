@@ -22,6 +22,16 @@ p {
 	flex-direction: column;
 }
 
+header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+}
+
+.scores {
+	justify-self: end;
+}
+
 .card-container {
 	margin-top: 20px;
 	align-self: center;
