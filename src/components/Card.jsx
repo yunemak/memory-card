@@ -1,7 +1,7 @@
-export default function Card({ char }) {
+export default function Card({ char, handleCardClick }) {
 	return (
-		<div className="card">
-			<img src={char.image} />
+		<div className="card" onClick={() => handleCardClick(char.id)}>
+			<img src={char.image} alt={char.name} />
 			<p>{char.name}</p>
 		</div>
 	);
