@@ -1,10 +1,8 @@
-const Card = () => {
+export default function Card({ char }) {
 	return (
-		<div>
-			<img />
+		<div className="card">
+			<img src={char.image} />
 			<p></p>
 		</div>
 	);
-};
-
-export default Card;
+}
