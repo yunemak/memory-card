@@ -29,7 +29,8 @@ function App() {
 
 				const data = await response.json();
 				console.log(data.results);
-				setCharacters(data.results.slice(0, 12));
+				const shuffled = shuffleArray(data.results.slice(0, 12));
+				setCharacters(shuffled);
 			} catch (error) {
 				console.log(`Error: ${error}`);
 			}

@@ -1,16 +1,77 @@
-# React + Vite
+# Rick and Morty Memory Game 🧠🎮
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A memory card game built with React as part of [The Odin Project](https://www.theodinproject.com/) curriculum. Test your memory by clicking on unique Rick and Morty characters without repeating any of them!
 
-Currently, two official plugins are available:
+## Live Demo 🚀
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+link -> https://memory-card-gbrb454ux-yunemak.vercel.app/
 
-## React Compiler
+## Features ✨
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Dynamic Data Fetching:** Characters and images are fetched in real-time from the official [Rick and Morty API](https://rickandmortyapi.com/).
+- **Score Tracking:** Keeps track of your current score and updates your best score (`Best Score`) dynamically.
+- **Shuffle Mechanism:** Cards are automatically shuffled after every click using a custom shuffle algorithm to keep the game challenging.
+- **Win/Loss Logic:** Detects if you've clicked a duplicate card (Game Over) or successfully clicked all 12 unique cards (Victory).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Built With 🛠️
+
+- **React** (Functional Components, Hooks: `useState`, `useEffect`)
+- **JavaScript (ES6+)**
+- **CSS3** (Grid Layout, Flexbox)
+- **Rick and Morty API**
+
+---
+
+## Getting Started ⚙️
+
+To get a local copy up and running, follow these simple steps.
+
+### Prerequisites
+
+Make sure you have Node.js and npm installed on your machine.
+
+### Installation
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/memory-card.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd memory-card
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Run the development server:
+
+    ```bash
+    npm run dev
+    ```
+
+5. Open your browser and visit `http://localhost:5173` (or the port provided by Vite).
+
+---
+
+## What I Learned 💡
+
+- Managing complex state and keeping track of user interactions in React.
+- Fetching and handling asynchronous data from external REST APIs using `useEffect`.
+- Implementing game logic (duplicate checking, score resets, and win conditions).
+- Reusing components effectively with props and callback functions.
+
+---
+
+## Acknowledgements 🙏
+
+- [The Odin Project](https://www.theodinproject.com/) for the project guidelines and curriculum.
+- [The Rick and Morty API](https://rickandmortyapi.com/) for providing the free character data and images.
