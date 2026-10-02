@@ -14,6 +14,9 @@ function shuffleArray(array) {
 
 function App() {
 	const [characters, setCharacters] = useState([]);
+	const [score, setScore] = useState(0);
+	const [bestScore, setBestScore] = useState(0);
+	const [clickedCardIds, setClickedCardIds] = useState([]);
 
 	useEffect(() => {
 		async function fetchCharacters() {
@@ -37,19 +40,52 @@ function App() {
 
 	const handleCardClick = (id) => {
 		setCharacters(shuffleArray(characters));
-		console.log(`Tıklanan kart ID: ${id}`);
+
+		if (clickedCardIds.includes(id)) {
+			alert("Game Over! You clicked this card before.");
+
+			if (score > bestScore) {
+				setBestScore(score);
+			}
+			setScore(0);
+			setClickedCardIds([]);
+		} else {
+			const newScore = score + 1;
+			setScore(newScore);
+			setClickedCardIds([...clickedCardIds, id]);
+
+			if (newScore === 12) {
+				alert("Congratulations! You won the game!");
+				if (newScore > bestScore) {
+					setBestScore(newScore);
+				}
+				setScore(0);
+				setClickedCardIds([]);
+			}
+		}
 	};
 
 	return (
 		<div className="app">
-			<h1>Rick and Morty Memory Game</h1>
-			<p>
-				Get points by clicking on an image that you did not click
-				before! Up to 12 points.
-			</p>
+			<div>
+				<h1>Rick and Morty Memory Game</h1>
+				<p>
+					Get points by clicking on an image that you did not click
+					before! Up to 12 points.
+				</p>
+				<p>
+					Score: {score}
+					<br />
+					Best Score: {bestScore}
+				</p>
+			</div>
 			<div className="card-container">
 				{characters.map((char) => (
-					<Card key={char.id} char={char} handleCardClick={handleCardClick}/>
+					<Card
+						key={char.id}
+						char={char}
+						handleCardClick={handleCardClick}
+					/>
 				))}
 			</div>
 		</div>
