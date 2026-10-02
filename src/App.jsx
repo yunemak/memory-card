@@ -1,18 +1,27 @@
 import { useEffect } from "react";
-import { getCharacters } from "rickmortyapi";
+
+const API_URL = "https://rickandmortyapi.com/api/character";
 
 async function fetchCharacters() {
 	try {
-		const response = await getCharacters();
-		console.log(response.data.results);
+		const response = await fetch(API_URL);
+
+		if (!response.ok) {
+			throw new Error("Response was not ok!");
+		}
+
+		const data = await response.json();
+
+		return data.results.slice(0, 12);
 	} catch (error) {
 		console.log(`Error: ${error}`);
 	}
 }
 
 function App() {
+	let characters;
 	useEffect(() => {
-		fetchCharacters();
+		characters = fetchCharacters();
 	}, []);
 	return (
 		<div className="app">
